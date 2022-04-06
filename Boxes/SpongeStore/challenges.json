@@ -1,0 +1,34 @@
+[
+  {
+    "title": "SpongeStore: User",
+    "description": "SpongeStore is a new initiative started by Peter N to provide cheap and readily accessible cleaning products for people all around the world.\n\nFlag is in the user's home directory.",
+    "author": "Josh",
+    "points": 500,
+    "category": "boot2root",
+    "difficulty": "Medium",
+    "hint": "",
+    "unlock_requirement": "",
+    "url": "SET ME LATER",
+    "file": "",
+    "tags": [],
+    "education_resources": [],
+    "flag": "WMG{goOd_OL_UN4U7H3N7ic473d_rc3_7HrOUgh_WorDPr355_pLUgIn2}",
+    "disabled": false
+  },
+  {
+    "title": "SpongeStore: Root",
+    "description": "Angus has been compromised. Now, it's time to compromise root.\n\nFlag is in root's home directory.",
+    "author": "Josh",
+    "points": 500,
+    "category": "boot2root",
+    "difficulty": "Medium",
+    "hint": "",
+    "unlock_requirement": "SpongeStore: User",
+    "url": "SET ME LATER",
+    "file": "",
+    "tags": [],
+    "education_resources": [],
+    "flag": "WMG{w417_1_5h0ULDn7_l37_P30pl3_5ud0_r4nD0m_Pr09r4mZ??}",
+    "disabled": false
+  }
+]

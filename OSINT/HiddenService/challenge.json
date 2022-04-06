@@ -1,0 +1,16 @@
+{
+  "title": "Stress Them",
+  "description": "Stress Them seems to be the next big DDOS provider for malicious actor needs. We need your help identifying the main person running the site. Can you help us?\n\nThe flag is the name of the person running the site, e.g. WMG{John Smith}",
+  "author": "Josh",
+  "points": 500,
+  "category": "OSINT",
+  "difficulty": "Medium",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "http://ddosthemgtse5nm6jiswrfjowwrtj3tqeszaq5hfwrv5xb3zdkxnofad.onion",
+  "file": "",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{Steve Grenede}",
+  "disabled": false
+}

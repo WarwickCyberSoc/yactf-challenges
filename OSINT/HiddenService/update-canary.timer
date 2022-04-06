@@ -1,0 +1,10 @@
+[Unit]
+Description=Update canary
+Requires=update-canary.service
+
+[Timer]
+Unit=update-canary.service
+OnCalendar=*-*-* *:00:00
+
+[Install]
+WantedBy=timers.target

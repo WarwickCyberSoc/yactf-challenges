@@ -1,0 +1,8 @@
+Title: Basic WAF
+Author: Ziemni
+Description:
+"""
+I have filtered most important characters, now the attack is impossible!
+"""
+WMG{s1mpl3_ssti_byp4ss_:)}
+Difficulty: Easy

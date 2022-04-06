@@ -1,0 +1,1 @@
+geth --lightkdf --ethash.cachesinmem 0 --ethash.dagsinmem 0 --cache 64 --bloomfilter.size 64 --datadir /srv/eth/net/http --networkid 42 --syncmode full --http --http.addr 0.0.0.0 --http.port 8545 --http.api eth --bootnodes "enode://$(cat /srv/eth/net/boot/address)@127.0.0.1:30301" --port 30302

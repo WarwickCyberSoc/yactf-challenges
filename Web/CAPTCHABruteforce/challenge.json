@@ -1,0 +1,16 @@
+{
+  "title": "Super Secure Admin Panel",
+  "description": "We discovered an admin panel that we can't seem to get access to, can you?\n\nFlag is at `/flag.txt`.",
+  "author": "Josh",
+  "points": 500,
+  "category": "Web",
+  "difficulty": "Easy",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "SET ME LATER",
+  "file": "super_secure_admin_panel.zip",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{wAI7_all_7Ho53_php_cAp7Cha_7U7Orial5_AR3_wroN9???}",
+  "disabled": false
+}

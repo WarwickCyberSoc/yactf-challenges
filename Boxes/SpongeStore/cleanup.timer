@@ -1,0 +1,10 @@
+[Unit]
+Description=Cleanup
+Requires=cleanup.service
+
+[Timer]
+Unit=cleanup.service
+OnCalendar=*-*-* *:*:00
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <main>
+        <h1>Documents</h1>
+
+        <div class="alert alert-primary">
+            <strong>Hi everyone!</strong> If you have any issues with our site, please feel free to contact me at <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">admin@docustore.local</a>!
+        </div>
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+        <div class="alert alert-{{category}}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+        
+        <ul class="list-group">
+            {% for document in documents %}
+                <li class="list-group-item"><a href="/viewdocument/{{document['id']}}"><strong>{{document["orig_name"]}}</strong><br>Uploaded at {{document['uploaded_at'] | dt}}</a></li>
+            {% endfor %}
+        </ul>
+
+    </main>
+</div>
+{% endblock %}

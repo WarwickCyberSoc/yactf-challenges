@@ -1,0 +1,5 @@
+Title: poison
+Author: Ziemni
+Description: I made this new file viewer, gonna get a cookie now.
+Flag: WMG{y0ur_acc3ss_h4s_b33n_l0gged_~daddy~_UwU}
+Difficulty: Easy

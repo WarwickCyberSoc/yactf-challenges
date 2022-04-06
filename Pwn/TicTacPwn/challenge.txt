@@ -1,0 +1,16 @@
+TicTacPwn
+Josh H
+I made this TicTacToe in C in only a couple of hours and only had to ask Adam W for help 6 times!
+
+
+solof — Today at 19:19
+please
+also
+why have you done scanf for a character
+when you could have just done scanf for an integer
+and it would have converted it to an integer for you
+hello?
+
+The flag is in `flag.txt`.
+
+

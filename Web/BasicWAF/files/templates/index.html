@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<div class="login-page" action="/" method="get">
+  <div class="form">
+    <form class="login-form">
+      <input type="text" placeholder="username" name="login"/>
+      <input type="password" placeholder="password" name="password"/>
+      <input class="b" type="submit" value="Login">
+    </form>
+  </div>
+</div>
+
+{% autoescape off %}{{ alert }}{% endautoescape %} 
+
+</body>
+</html>

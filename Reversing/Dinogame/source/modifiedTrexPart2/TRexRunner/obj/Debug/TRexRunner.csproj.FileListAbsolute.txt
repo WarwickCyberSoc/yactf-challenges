@@ -1,0 +1,4 @@
+C:\Users\user\Downloads\ctfGameTesting\modifiedTrex\TRexRunner\obj\Debug\TRexRunner.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\ctfGameTesting\modifiedTrex\TRexRunner\obj\Debug\T_Rex_Runner.Form1.resources
+C:\Users\user\Downloads\ctfGameTesting\modifiedTrex\TRexRunner\obj\Debug\T_Rex_Runner.Properties.Resources.resources
+C:\Users\user\Downloads\ctfGameTesting\modifiedTrex\TRexRunner\obj\Debug\TRexRunner.csproj.GenerateResource.cache

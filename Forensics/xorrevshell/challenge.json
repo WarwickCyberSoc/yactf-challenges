@@ -1,0 +1,16 @@
+{
+  "title": "Wait, not MSFVenom?!",
+  "description": "We managed to get a packet capture of an attacker stealing John's bank credentials. Can you work out exactly what was stolen?",
+  "author": "Josh",
+  "points": 500,
+  "category": "Forensics",
+  "difficulty": "Easy",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "",
+  "file": "wait_not_msfvenom.pcap",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{Cu570m_revER5e_5HELL???}",
+  "disabled": false
+}

@@ -1,0 +1,9 @@
+Challenge name: CrackedCraft
+
+Description: We've been following a known scammer for years, and we've just intercepted some traffic that we think is interesting. Could you investigate for us?!
+
+Flag: WMG{cewl_i5_c00l_d0nt_y0u_th1nk?}
+
+Zip password: maggot0sidrorideiml37c
+
+Author: Angus G

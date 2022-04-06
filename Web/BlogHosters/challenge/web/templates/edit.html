@@ -1,0 +1,132 @@
+{% extends "main.html" %} {% block content %}
+<div class="container" style="margin-top: 100px">
+  <p>
+    Put your blog's HTML and CSS in the boxes below and watch our preview magically show your site! Once you're happy with it, you can
+    submit it. It will undergo a short verification process just to ensure it falls within our Terms and Conditions, then will be published
+    to our live site at <a href="/blog/{{g.user['username']}}">http://bloghosters.local/blog/{{g.user['username']}}</a>.
+  </p>
+  {% if success %}
+  <div class="alert alert-success">{{success}}</div>
+  {% endif %} {% if error %}
+  <div class="alert alert-danger">{{error}}</div>
+  {% endif %}
+
+  <p>
+    <strong>Time of your last submission review:</strong> {{ g.user['last_review_time'] or "N/A"}}<br />
+    <strong>Time of your last submission approval:</strong> {{ g.user["last_approval_time"] or "N/A"}}
+  </p>
+
+  <form action="/edit" method="POST" id="unapproved">
+    <h3 class="my-2">Here's your unapproved blog content:</h3>
+    <div class="row">
+      <div class="col-6">
+        <textarea name="content" id="html-input" style="width: 100%; min-height: 200px" placeholder="Put your HTML here!">
+{{ user["unapproved_blog_content"] or "" }}</textarea
+        >
+        <button type="button" class="btn btn-primary w-100" id="copy-html">Copy HTML from approved post</button>
+      </div>
+      <div class="col-6">
+        <textarea name="style" id="css-input" style="width: 100%; min-height: 200px" placeholder="Put your CSS here!">
+{{ user["unapproved_blog_styling"] or "" }}</textarea
+        >
+        <button type="button" class="btn btn-primary w-100" id="copy-css">Copy CSS from approved post</button>
+      </div>
+      <div class="col-12 mt-2">
+        <h3>Preview</h3>
+        <iframe style="border: 1px solid black; width: 100%; height: 200px" src="javascript:void(0);" sandbox=" " id="preview"></iframe>
+      </div>
+      <div class="col-12 text-center" style="margin-top: 10px; margin-bottom: 20px">
+        <button class="main-button">Submit Update For Approval</button>
+      </div>
+    </div>
+  </form>
+  <hr />
+  <h3 class="my-2">Here's your approved blog content:</h3>
+  <p>
+    Remember, you can see your <a href="/blog/{{g.user['username']}}">entire blog in full here!</a> This little preview doesn't do your blog
+    justice!
+  </p>
+  <div class="row">
+    <div class="col-6">
+      <textarea readonly id="approved-html-input" style="width: 100%; min-height: 200px" placeholder="You didn't put any HTML!">
+{{ user["blog_content"] or "" }}</textarea
+      >
+    </div>
+    <div class="col-6">
+      <textarea readonly id="approved-css-input" style="width: 100%; min-height: 200px" placeholder="You didn't put any CSS!">
+{{ user["blog_styling"] or "" }}</textarea
+      >
+    </div>
+    <div class="col-12">
+      <h3>Live Preview</h3>
+      <iframe
+        style="border: 1px solid black; width: 100%; height: 500px"
+        src="javascript:void(0);"
+        sandbox=" "
+        id="approved-preview"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  const iframeElement = document.getElementById("preview");
+  const htmlInput = document.getElementById("html-input");
+  const cssInput = document.getElementById("css-input");
+
+  cssInput.addEventListener("input", onUpdate);
+  htmlInput.addEventListener("input", onUpdate);
+
+  function onUpdate() {
+    iframeElement.src =
+      `data:text/html;charset=utf-8,` +
+      encodeURIComponent(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Your New Blog Page</title>
+            <style>${cssInput.value}</style>
+        </head>
+        <body>
+            ${htmlInput.value}
+        </body>
+        </html>`);
+  }
+
+  onUpdate();
+
+  const approvediframeElement = document.getElementById("approved-preview");
+  const approvedHtmlInput = document.getElementById("approved-html-input");
+  const approvedCssInput = document.getElementById("approved-css-input");
+
+  approvediframeElement.src =
+    `data:text/html;charset=utf-8,` +
+    encodeURIComponent(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Your New Blog Page</title>
+            <style>${approvedCssInput.value}</style>
+        </head>
+        <body>
+            ${approvedHtmlInput.value}
+        </body>
+        </html>`);
+
+  document.getElementById("copy-html").addEventListener("click", () => {
+    htmlInput.value = approvedHtmlInput.value;
+    onUpdate();
+  });
+
+  document.getElementById("copy-css").addEventListener("click", () => {
+    cssInput.value = approvedCssInput.value;
+    onUpdate();
+  });
+</script>
+{% endblock %}

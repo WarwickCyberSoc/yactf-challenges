@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to ddosthem
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/ddosthem
+Environment="PATH=/var/www/ddosthem/venv/bin"
+ExecStart=/var/www/ddosthem/venv/bin/uwsgi --ini ddosthem.ini
+
+[Install]
+WantedBy=multi-user.target

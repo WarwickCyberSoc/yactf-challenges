@@ -1,0 +1,10 @@
+Title: Gecko
+Author: Ziemni
+Description:
+"""
+Geckos > Foxes (especially whilst on fire)
+
+The service is running internally on 127.0.0.1:5555
+"""
+WMG{Geckos are small, mostly carnivorous lizards that have a wide distribution, found on every continent except Antarctica. Belonging to the infraorder Gekkota, geckos are found in warm climates throughout the world. They range from 1.6 to 60 centimetres.}
+Difficulty: Easy

@@ -1,0 +1,9 @@
+Title: e != 3
+Author: Ziemni
+Description: Wait?... e doesn't equal to 3? Is that good? 
+Flag: WMG{0h_no_e_1s_n0t_3??!?}
+Difficulty: Easy
+
+Files to give to user:
+output.txt - Required
+challenge.py - Not required, can be a hint

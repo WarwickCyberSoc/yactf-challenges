@@ -1,0 +1,40 @@
+{% extends "main.html" %} {% block content %}
+<div style="text-align: center">
+  <h1 style="font-size: 70px">
+    <img src="/s/flame.gif" height="50" style="margin-right: 10px" />Stress Them<img
+      src="/s/flame.gif"
+      height="50"
+      style="margin-left: 10px"
+    />
+  </h1>
+  <h3 style="font-size: 40px">DDoS as a service</h3>
+  <p>
+    We provide high quality, high bandwidth denial sevice attacks to whoever you want. <br />We accept single IP addresses, IP blocks or
+    simply state the company or person you wish to attack and we shall do the rest for you. <br />We will not attack government entities as
+    it is too risky for our business. <br />We will not give refunds if you submit government entities. <br />Only
+    <strong>Monero</strong> is accepted. We do not accept any other currency.
+    <br />
+    <br /><p style="color: red">!!!!!!!!!!!!!</p>Ensure our <a href="/s/canary.txt">CANARY TOKEN</a> has been updated in the last 24
+    hours AND is signed with our <a href="/s/pubkey.txt">PUBLIC KEY</a>. SAVE THE PUBLIC KEY!<p style="color: red">!!!!!!!!!!!!!</p>
+  </p>
+  <h3 style="font-size: 30px">PRICES</h3>
+  <table style="margin: auto; border: 1px solid white; width: 800px">
+    <tr>
+      <th>Target</th>
+      <th>Bandwidth</th>
+      <th>Time</th>
+      <th>Price</th>
+    </tr>
+    {% for service in services %} {% set usd_price = service["price"] * conv_rate %}
+    <tr>
+      <td>{{service["target"]}}</td>
+      <td>{{service["bandwidth"]}}</td>
+      <td>{{service["time"]}}</td>
+      <td>{{service["price"]}} XMR ({{usd_price | round(2) }} USD)</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <br />
+  <a href="/login"><strong>GET STARTED NOW</strong></a>
+</div>
+{% endblock %}

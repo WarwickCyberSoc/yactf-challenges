@@ -1,0 +1,7 @@
+Title: Compressed Transmissions
+
+Description: We've captured something over the wire - Can you take a look? We know that the sender likes to use the password "beansbeansbeans", but we have no idea what we're looking for!
+
+Flag: WMG{A_K33n_Ey3_4_M4g1c_Byt3s!}
+
+Author: Angus G

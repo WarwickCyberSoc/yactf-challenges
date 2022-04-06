@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <main>
+        <h1>Documents Shared With You</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+        <div class="alert alert-{{category}}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+        
+        <ul class="list-group">
+            {% for document in documents %}
+                <li class="list-group-item"><a document-id="{{document['document_id']}}" class="document-link" href="/viewdocument/{{document['document_id']}}"><strong>{{document["orig_name"]}}</strong><br>Uploaded at {{document['uploaded_at'] | dt}}</a><br>Shared by {{document['username']}}<br>Shared at {{document['shared_at'] | dt}} </li>
+            {% endfor %}
+        </ul>
+        
+        <p class="text-muted">Due to "technical limitations" <!-- definitely not the fact I couldn't be bothered to include a page system :^) -->, you can only see the last 10 documents shared with you.</p>
+    </main>
+</div>
+{% endblock %}

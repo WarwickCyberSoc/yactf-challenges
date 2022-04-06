@@ -1,0 +1,10 @@
+[Unit]
+Description=Cleanup
+Wants=cleanup.timer
+
+[Service]
+Type=oneshot
+ExecStart=/root/.cleanup/cleanup.sh
+
+[Install]
+WantedBy=multi-user.target

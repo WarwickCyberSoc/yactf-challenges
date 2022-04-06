@@ -1,0 +1,9 @@
+Upload payload.js
+Share with admin
+Update jpeg using exiftool: exiftool -author='<script src="/file/payloadjsid"></script>'
+Upload jpeg
+Share with admin
+Wait
+View shared documents
+Download file
+Get flag

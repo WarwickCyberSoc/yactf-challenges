@@ -1,0 +1,25 @@
+{% extends "main.html" %} {% block content %}
+<div style="text-align: center">
+  <h1 style="font-size: 70px">
+    <img src="/s/flame.gif" height="50" style="margin-right: 10px" />Login<img src="/s/flame.gif" height="50" style="margin-left: 10px" />
+  </h1>
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+  <div class="alert alert-{{category}}">{{ message }}</div>
+  {% endfor %} {% endif %} {% endwith %}
+  <form action="/login" method="POST">
+    <div>
+      <label>Username</label>
+      <input name="username" type="text" />
+    </div>
+    <div>
+      <label>Password</label>
+      <input name="password" type="password" />
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+    <br />
+    <a href="/register">Register</a>
+  </form>
+</div>
+{% endblock %}

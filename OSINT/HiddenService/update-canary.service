@@ -1,0 +1,11 @@
+[Unit]
+Description=Update canary
+Wants=update-canary.timer
+
+[Service]
+Type=oneshot
+WorkingDirectory=/root/HiddenService/keys
+ExecStart=/root/HiddenService/keys/update.py
+
+[Install]
+WantedBy=multi-user.target

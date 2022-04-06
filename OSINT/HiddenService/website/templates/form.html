@@ -1,0 +1,37 @@
+{% extends "main.html" %} {% block content %}
+<div style="text-align: center">
+  <h1 style="font-size: 70px">
+    <img src="/s/flame.gif" height="50" style="margin-right: 10px" />Request<img src="/s/flame.gif" height="50" style="margin-left: 10px" />
+  </h1>
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+  <div class="alert alert-{{category}}">{{ message }}</div>
+  {% endfor %} {% endif %} {% endwith %}
+  <form action="/form" method="POST">
+    <div>
+      <label>Service</label><br>
+      <select name="service" required>
+        {% for service in services %}
+        <option value="{{service['id']}}">{{service['target']}} ({{service['price']}} XMR)</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <label>Target info</label><br>
+      <textarea required name="info" style="width: 400px; height: 100px;" placeholder="Info about target (ip addres, emails, e.g)"></textarea>
+    </div>
+    <div>
+      <p>
+        Please make payment to the following monero address promptly after sending Requests:
+
+        <h4>888tNkZrPN6JsEgekjMnABU4TBzc2Dt29EPAvkRxbANsAnjyPbb3iQ1YBRk1UXcdRsiKc9dhwMVgN5S9cQUiyoogDavup3H</h4>
+      </p>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <br />
+  <a href="/logout">Logout</a>
+</div>
+{% endblock %}

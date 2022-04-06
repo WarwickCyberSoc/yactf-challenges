@@ -1,0 +1,16 @@
+{
+  "title": "Certified Kernel Developer",
+  "description": "I got tired of having to recompile my kernel all the time, so I've modified the kernel to run whatever I want! How could this possibly go wrong...",
+  "author": "Angus G, Adam W",
+  "points": 500,
+  "category": "Pwn",
+  "difficulty": "Medium",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "",
+  "file": "kernel_files.zip",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{c0p3_sy5c4ll_seethe_and_mald}",
+  "disabled": false
+}

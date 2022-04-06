@@ -1,0 +1,42 @@
+{%extends "main.html" %} {%block content%}
+<style>
+  input {
+    background-color: rgba(250, 250, 250, 0.3);
+  }
+</style>
+<section class="section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <div class="contact-form">
+          <h4 class="mb-3">Login to BlogHosters</h4>
+          <p class="mb-3">Don't have an account? <a href="/signup">Sign up here!</a></p>
+          {% if error %}
+          <div class="alert alert-danger">{{error}}</div>
+          {% endif %}
+          <form id="contact" action="/login" method="post">
+            <div class="row">
+              <div class="col-12">
+                <fieldset>
+                  <input name="username" type="text" placeholder="Username" required="" />
+                </fieldset>
+              </div>
+              <div class="col-12">
+                <fieldset>
+                  <input name="password" type="password" placeholder="Password" required="" />
+                </fieldset>
+              </div>
+              <p class="mb-3"><a href="/forgot_password">Forgot password?</a></p>
+              <div class="col-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button">Login</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}

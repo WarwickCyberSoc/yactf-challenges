@@ -1,0 +1,18 @@
+html,
+body {
+  background-color: black;
+  color: white;
+}
+
+body {
+  padding: 10px;
+  border: 2px solid red;
+}
+
+.alert-success {
+  color: green;
+}
+
+.alert-error {
+  color: red;
+}

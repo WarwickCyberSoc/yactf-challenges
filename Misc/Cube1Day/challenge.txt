@@ -1,0 +1,18 @@
+Title: Cube 1Day
+Author: Ziemni
+Description:
+"""
+Plz no hack my minecraft server.
+
+If you don't have a copy of Minecraft, you can download MultiMC from here: https://multimc.org/
+After Installing:
+1. Click "Add Instance"
+2. Select Version "1.17.1"
+3. Clieck "OK"
+4. Select it and on the right click "Launch Offline"
+5. Connect to server
+6. ...
+7. Hack?
+"""
+Flag: WMG{1_d4y_1n_cub3_g4me=w0rld_0n_f1r3!}
+Difficulty: Medium

@@ -1,0 +1,5 @@
+1. Extract the 7z, open the disk image folder
+2. Navigate to Drive\Users\Bobby\AppData\Local\Microsoft\Windows\Explorer\
+3. Open thumbcache_256.db in Thumbcache viewer, downloadable from https://thumbcacheviewer.github.io
+4. Find b6d7b4c8d61fa9f8
+5. Open to find flag

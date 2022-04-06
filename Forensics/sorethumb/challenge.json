@@ -1,0 +1,16 @@
+{
+  "title": "Sore Thumb",
+  "description": "We're up against a wall here agent; there's little time and you're our only shot. We've recovered a disk image and desperately need to recover the password that was used to encrypt the drives in a ransomware attack. We know he had the password saved inside an image on his computer, but they have since removed all traces of it. Can you recover the password?\n\nDownload: https://drive.google.com/file/d/14XzxmVVV0FaEzXg0D5k3euf_5r6ptryh/view?usp=sharing",
+  "author": "Alex McCoy (Tref)",
+  "points": 500,
+  "category": "Forensics",
+  "difficulty": "Easy",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "",
+  "file": "",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{THUMB-THING-FORGOTTEN-ABOUT}",
+  "disabled": false
+}

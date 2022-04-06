@@ -1,0 +1,65 @@
+Title: Blockchain 1 - Warmup 1
+
+Difficulty: Easy
+
+Category: Pwn
+
+Author: Oshawk
+
+Description:
+
+### Objective
+
+Find the flag hidden in the smart contract.
+
+You can find the redacted contract's source code in `blockchain1/victim/victim.sol`.
+
+The contract's ABI and deployment information can be found on the webserver.
+
+### Information
+
+The `blockchain1.zip` file gives everything you need to run the challenge locally. Simply run the following from within the `blockchain1` directory:
+
+```plain
+sudo docker build -t blockchain1 .
+sudo docker run -d -p 8000:8000 -p 8545:8545 blockchain1
+```
+
+Two ports are exposed:
+
+- A webserver (port `8000` for a local instance) to give information such as where contracts are deployed and their ABI.
+- A JSON-RPC server (port `8545` for a local instance) to allow you to interact with the private blockchain.
+
+You are given an account on the private blockchain with more than enough ETH:
+
+```plain
+Address: 0x42426018276De6979B83ec860B284A2D77c34242
+Private Key: 0x868c58e9dd7de7d470109330295891075e0219322c5cf7497bc15ffe8ad37605
+```
+
+### Starting Point
+
+Requires `requests` and `web3`.
+
+```python
+import requests
+from web3 import Web3
+from web3.middleware import geth_poa_middleware
+
+PROVIDER_URL = "http://localhost:8545"
+VICTIM_URL = "http://localhost:8000"
+
+w3 = Web3(Web3.HTTPProvider(PROVIDER_URL))
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+account = w3.eth.account.from_key(
+    0x868C58E9DD7DE7D470109330295891075E0219322C5CF7497BC15FFE8AD37605
+)
+
+Blockchain1 = w3.eth.contract(
+    abi=requests.get((f"{VICTIM_URL}/abi.json")).json(),
+    address=requests.get((f"{VICTIM_URL}/transaction_receipt.json")).json()[
+        "contractAddress"
+    ],
+)
+```

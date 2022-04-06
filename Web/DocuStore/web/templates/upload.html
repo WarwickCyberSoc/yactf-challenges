@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-lg-8 mx-auto p-3 py-md-5">
+    <main>
+      <h1>Docu<strong>Store</strong> File Upload</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %}
+        <div class="alert alert-{{category}}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+
+      
+        <form action="/documents/upload" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Upload a new file (max 2MB)</label>
+                <input class="form-control" type="file" name="file" id="formFile">
+            </div>
+            <button class="btn btn-primary" type="submit">Upload File</button>
+        </form>
+    </main>
+  </div>
+{% endblock %}

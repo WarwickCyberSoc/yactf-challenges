@@ -1,0 +1,12 @@
+argon2-cffi==21.3.0
+argon2-cffi-bindings==21.2.0
+cffi==1.15.0
+click==8.0.3
+Flask==2.0.2
+itsdangerous==2.0.1
+Jinja2==3.0.3
+MarkupSafe==2.0.1
+pycparser==2.21
+scrypt==0.8.19
+uWSGI==2.0.20
+Werkzeug==2.0.2

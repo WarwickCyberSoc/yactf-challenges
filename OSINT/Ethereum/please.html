@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="enableEthereumButton">Enable Ethereum</button>
+    <button id="send-one">Send transaction Pls</button>
+    <script>
+      const ethereumButton = document.querySelector(".enableEthereumButton");
+      let account;
+      ethereumButton.addEventListener("click", async () => {
+        //Will Start the metamask extension
+        const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+        console.log(accounts);
+
+        account = accounts[0];
+      });
+      String.prototype.convertToHex = function (delim) {
+        return this.split("")
+          .map(function (c) {
+            return ("0" + c.charCodeAt(0).toString(16)).slice(-2);
+          })
+          .join(delim || "");
+      };
+
+      document.getElementById("send-one").addEventListener("click", async () => {
+        console.log("cope");
+        const transactionParameters = {
+          nonce: "0x00", // ignored by MetaMask
+          gasPrice: "0x09184e72a000", // customizable by user during MetaMask confirmation.
+          gas: (21000 + data.length).toString(), // customizable by user during MetaMask confirmation.
+          to: "0x5503CCDAA5654c410AC097b2129c7574f1B85c7F", // Required except during contract publications.
+          from: ethereum.selectedAddress, // must match user's active address.
+          value: "0x1000000000000", // Only required to send ether to the recipient from the initiating external account.
+          data: "0x" + data.convertToHex(), // Optional, but used for defining smart contract creation and interaction.
+          chainId: "0x3", // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
+        };
+
+        // txHash is a hex string
+        // As with any RPC call, it may throw an error
+        const txHash = await ethereum.request({
+          method: "eth_sendTransaction",
+          params: [transactionParameters],
+        });
+      });
+
+      const data = `
+      $$\       $$$$$$$$\  $$$$$$\  $$\   $$\ $$$$$$$$\ $$$$$$$\         $$$$$$\   $$$$$$\                                        
+      $$ |      $$  _____|$$  __$$\ $$ | $$  |$$  _____|$$  __$$\       $$  __$$\ $$  __$$\                                       
+      $$ |      $$ |      $$ /  $$ |$$ |$$  / $$ |      $$ |  $$ |      $$ /  \__|$$ /  \__|                                      
+      $$ |      $$$$$\    $$$$$$$$ |$$$$$  /  $$$$$\    $$ |  $$ |      $$ |      $$ |                                            
+      $$ |      $$  __|   $$  __$$ |$$  $$<   $$  __|   $$ |  $$ |      $$ |      $$ |                                            
+      $$ |      $$ |      $$ |  $$ |$$ |\$$\  $$ |      $$ |  $$ |      $$ |  $$\ $$ |  $$\                                       
+      $$$$$$$$\ $$$$$$$$\ $$ |  $$ |$$ | \$$\ $$$$$$$$\ $$$$$$$  |      \$$$$$$  |\$$$$$$  |                                      
+      \________|\________|\__|  \__|\__|  \__|\________|\_______/        \______/  \______/                                       
+                                                                                                                      
+                                                                                                                  
+                                                                                                                  
+$$$$$$\  $$\   $$\ $$$$$$$\         $$$$$$\   $$$$$$\  $$\   $$\ $$$$$$$$\ $$$$$$\ $$$$$$$\  $$$$$$$$\ $$\   $$\ $$$$$$$$\ 
+$$  __$$\ $$$\  $$ |$$  __$$\       $$  __$$\ $$  __$$\ $$$\  $$ |$$  _____|\_$$  _|$$  __$$\ $$  _____|$$$\  $$ |\__$$  __|
+$$ /  $$ |$$$$\ $$ |$$ |  $$ |      $$ /  \__|$$ /  $$ |$$$$\ $$ |$$ |        $$ |  $$ |  $$ |$$ |      $$$$\ $$ |   $$ |   
+$$$$$$$$ |$$ $$\$$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ $$\$$ |$$$$$\      $$ |  $$ |  $$ |$$$$$\    $$ $$\$$ |   $$ |   
+$$  __$$ |$$ \$$$$ |$$ |  $$ |      $$ |      $$ |  $$ |$$ \$$$$ |$$  __|     $$ |  $$ |  $$ |$$  __|   $$ \$$$$ |   $$ |   
+$$ |  $$ |$$ |\$$$ |$$ |  $$ |      $$ |  $$\ $$ |  $$ |$$ |\$$$ |$$ |        $$ |  $$ |  $$ |$$ |      $$ |\$$$ |   $$ |   
+$$ |  $$ |$$ | \$$ |$$$$$$$  |      \$$$$$$  | $$$$$$  |$$ | \$$ |$$ |      $$$$$$\ $$$$$$$  |$$$$$$$$\ $$ | \$$ |   $$ |   
+\__|  \__|\__|  \__|\_______/        \______/  \______/ \__|  \__|\__|      \______|\_______/ \________|\__|  \__|   \__|   
+                                                                                                                  
+                                                                                                                                          
+                                                                                                                                          
+                          $$\       $$$$$$$$\  $$$$$$\  $$\   $$\                                                                                     
+                          $$ |      $$  _____|$$  __$$\ $$ | $$  |                                                                                    
+                          $$ |      $$ |      $$ /  $$ |$$ |$$  /                                                                                     
+                          $$ |      $$$$$\    $$$$$$$$ |$$$$$  /                                                                                      
+                          $$ |      $$  __|   $$  __$$ |$$  $$<                                                                                       
+                          $$ |      $$ |      $$ |  $$ |$$ |\$$\                                                                                      
+                          $$$$$$$$\ $$$$$$$$\ $$ |  $$ |$$ | \$$\                                                                                     
+                          \________|\________|\__|  \__|\__|  \__|                                                                                    
+                                                                                                                                  
+                                          
+                                      YOU WERE WARNED
+                                NOW YOU WILL PAY FOR IGNORING US
+                                    - THE SCENE LEAKERS
+                                      
+                  V01HezhsMGNLY0g0MU5fczMzTVNfcHIzNzd5X0g0bmR5X0Ywcl9yNE5zME0yfQ==
+
+                      magnet:?xt=urn:btih:UE2ESAAAS7JI7DU4CGEHTGIBMWIKX2DA
+
+
+`;
+    </script>
+  </body>
+</html>

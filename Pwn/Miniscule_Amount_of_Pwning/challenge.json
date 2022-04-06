@@ -1,0 +1,16 @@
+{
+  "title": "Miniscule Amount of Pwning",
+  "description": "Less code = safer code?",
+  "author": "Adam W",
+  "points": 500,
+  "category": "Pwn",
+  "difficulty": "Medium",
+  "hint": "",
+  "unlock_requirement": "",
+  "url": "",
+  "file": "smallpwn_files.zip",
+  "tags": [],
+  "education_resources": [],
+  "flag": "WMG{w3_d0_4_l1tt13_dlr3s0lv1ng}",
+  "disabled": false
+}

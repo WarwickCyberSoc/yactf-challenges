@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Document Version="2">
+    <Protection InputFileName="T-Rex Runner.exe" Options="856776" WaterMarkName="jdb_jdb">
+        <Messages />
+        <Folders />
+        <Procedures>
+            <Procedure MapAddress="T_Rex_Runner.Form1::MainGameTimerEvent(object, class System.EventArgs)" Options="0" CompilationType="2" />
+        </Procedures>
+        <Objects />
+    </Protection>
+    <DLLBox>
+        <Folders />
+    </DLLBox>
+    <Script />
+    <LicenseManager />
+</Document>

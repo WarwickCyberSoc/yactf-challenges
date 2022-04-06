@@ -1,0 +1,8 @@
+name: FamilyGradeSupercomputer
+description: This one's easy, just boot up one of your supercomputers and let it rip!
+flag: WMG{more_like_supercopeuter}
+author: me :moyai:
+
+don't provide the .py because it has the solution in :moyai:
+they get nothing - they'll work it out when they connect to the server
+ 
